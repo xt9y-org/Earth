@@ -26,7 +26,7 @@ jobs:
         run: |
           git clone --depth 1 https://github.com/xt9y/Horse.git "$RUNNER_TEMP/Horse"
           test "$(git -C "$RUNNER_TEMP/Horse" rev-parse HEAD)" = "72cbf3f115f9736d47e1dd0fbe56f82b3660ce6c"
-          c --directory "$RUNNER_TEMP/Horse" build
+          (cd "$RUNNER_TEMP/Horse" && c build)
       - name: Run exact Earth FBX contract
         run: |
           set -euo pipefail
